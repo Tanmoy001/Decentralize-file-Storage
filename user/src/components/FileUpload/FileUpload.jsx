@@ -5,6 +5,9 @@ const FileUpload = ({ contract, account, provider }) => {
   const [file, setFile] = useState(null);
   const [fileName, setFileName] = useState("No image selected");
   const handleSubmit = async (e) => {
+
+    /* e.preventDefault();save the page from reload */
+    
     e.preventDefault();
     if (file) {
       try {
@@ -16,8 +19,8 @@ const FileUpload = ({ contract, account, provider }) => {
           url: "https://api.pinata.cloud/pinning/pinFileToIPFS",
           data: formData,
           headers: {
-            pinata_api_key: `eb603340c56f428e2e75`,
-            pinata_secret_api_key: `49c290886103d510f18b35ae7fe9e33695b2768bddc52d2cffbc96abcf0399a9`,
+            pinata_api_key: `4f52fc90305609a3fab1`,
+            pinata_secret_api_key: `ec3bbc9f982454239f61e6856ddb778ccfe360b8fc3cd717471861155ef7ff9a`,
             "Content-Type": "multipart/form-data",
           },
         });

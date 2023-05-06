@@ -27,7 +27,10 @@ function App() {
         const signer = provider.getSigner();
         const address = await signer.getAddress();
         setAccount(address);
-        let contractAddress = "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512";
+
+        /* cntract address abi and provider or signer are required  */
+        
+        let contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
 
         const contract = new ethers.Contract(
           contractAddress,
@@ -44,6 +47,9 @@ function App() {
     provider && loadProvider();
   }, []);
   return (
+    <>
+    {!modalOpen && (<button className='share' onClick={()=>setModalOpen(true)}>Share</button>)}
+   {(modalOpen &&( <Modal setModalOpen={setModalOpen} contact ={contract}/>))}
     <div className='App'>
       <h1 style={{color:"white"}}>Decentralized cloud storage</h1>
       <div className='bg'></div>
@@ -58,6 +64,7 @@ function App() {
     
     <Display contract={contract} account={account}></Display>
     </div>
+    </>
   );
 }
 

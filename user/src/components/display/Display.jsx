@@ -39,17 +39,22 @@ const Display = ({ contract, account }) => {
     }
   };
   return (
-    <>
+    <div className="display">
       <div className="image-list">{data}</div>
       <input
         type="text"
-        placeholder="Enter Address"
+        placeholder="Enter Address for access files"
         className="address"
       ></input>
+      <div className="getfile_content">
+        <h3>Check your all files</h3>
+      </div>
+      <div className="get_data">
       <button className="center button" onClick={getdata}>
         Get Data
       </button>
-    </>
+      </div>
+    </div>
   );
 };
 export default Display;

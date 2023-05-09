@@ -5,6 +5,10 @@ import { ethers } from 'ethers';
 import FileUpload from './components/FileUpload/FileUpload';
 import Modal from './components/Modal/Modal';
 import Display from './components/display/Display';
+import Homescreen from './components/homescreen/Homescreen';
+import Info from './components/aboutus/Info';
+import Footer from './components/footer/Footer';
+import HowtoUpload from './components/upload/HowtoUpload';
 function App() {
   const [account, setAccount] = useState("");
   const [contract, setContract] = useState(null);
@@ -48,22 +52,30 @@ function App() {
   }, []);
   return (
     <>
-    {!modalOpen && (<button className='share' onClick={()=>setModalOpen(true)}>Share</button>)}
-   {(modalOpen &&( <Modal setModalOpen={setModalOpen} contact ={contract}/>))}
+
     <div className='App'>
-      <h1 style={{color:"white"}}>Decentralized cloud storage</h1>
-      <div className='bg'></div>
+      <div className='home'>
+
+      <Homescreen account={account}/>
+{/*       <div className='bg'></div>
       <div className='bg bg2'></div>
-      <div className='bg bg3'></div>
-      <p style={{color:"white"}}>Account :{account?account:"Not connected with metamsk"}</p>
+      <div className='bg bg3'></div> */}
+      {/* <p>Account :{account?account:"Not connected with metamsk"}</p> */}
+      </div>
     <FileUpload
      account={account}
      provider={provider}
      contract={contract}
      />
-    
+     <div className='share_modal'>
+        {!modalOpen && (<button className='share' onClick={()=>setModalOpen(true)}>Share</button>)}
+   {(modalOpen &&( <Modal setModalOpen={setModalOpen} contact ={contract}/>))}
+   </div>
     <Display contract={contract} account={account}></Display>
     </div>
+    <Info/>
+    <HowtoUpload/>
+    <Footer/>
     </>
   );
 }

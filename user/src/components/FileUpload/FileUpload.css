@@ -1,0 +1,22 @@
+.fileupload{
+    background: aliceblue;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+      display: grid;
+      grid-template-rows:1fr 1fr;
+      gap: 5px;
+  }
+  .fileupload .title{
+    font-family: cursive;
+  }
+  .fileupload .form{
+    
+      margin-bottom: 2rem;
+  }
+  .fileupload .form .choose{
+    margin-right: 8px;
+  }
+  .fileupload .form .textArea{
+margin-right: 8px;  
+}

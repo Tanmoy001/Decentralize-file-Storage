@@ -34,7 +34,7 @@ function App() {
 
         /* cntract address abi and provider or signer are required  */
         
-        let contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
+        let contractAddress = "0x02c25b059b6A240D28C7F956C7154Cc58585A981";
 
         const contract = new ethers.Contract(
           contractAddress,

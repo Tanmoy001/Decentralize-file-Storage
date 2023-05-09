@@ -2,13 +2,13 @@ require("@nomicfoundation/hardhat-toolbox");
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
-  solidity: "0.8.9",
+  solidity: "0.7.3",
+  defaultNetwork: "sepolia",
   networks: {
-    hardhat: {
-      chainId: 1337,
-    },
+    hardhat: {},
+    sepolia: {
+      url: API_URL,
+      accounts: [`0x${PRIVATE_KEY}`]
+    }
   },
-  paths: {
-    artifacts: "./user/src/artifacts",
-  },
-};
+}
